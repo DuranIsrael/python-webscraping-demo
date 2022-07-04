@@ -8,7 +8,6 @@ import pandas as pd
 url = "https://pogotrainer.club//"
 
 results = requests.get(url)
-
 doc = BeautifulSoup(results.content, "html.parser")
 article = doc.find('div',attrs={'class': "col-md-8"})
 
@@ -24,7 +23,7 @@ for items in article.find_all('div',attrs={'class':"trainerContainer"}):
     trainer_num.appende(trainer_num)
 
 mylist = pd.DataFrame({'Trainer Names:':trainer_names, 'Trainer Numbers:':trainer_num})
-mylist.to.csv("TrainerConnect.csv")
+mylist.to_csv("TrainerConnect.csv")
 
 
 
