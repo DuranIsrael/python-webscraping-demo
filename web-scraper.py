@@ -17,10 +17,10 @@ trainer_num = []
 
 for items in article.find_all('div',attrs={'class':"trainerContainer"}):
     trainer_names = items.find('h4',attrs={'class':"media-heading"}).text
-    trainer_num = items.find('a',attrs={'title':"Copy Trainer Code"}).text
+    trainer_num = items.find('a',attrs={'class':"TClink"}).text
 
-    trainer_names.append(trainer_names)
-    trainer_num.appende(trainer_num)
+trainer_names.append(trainer_names)
+trainer_num.append(trainer_num)
 
 mylist = pd.DataFrame({'Trainer Names:':trainer_names, 'Trainer Numbers:':trainer_num})
 mylist.to_csv("TrainerConnect.csv")
